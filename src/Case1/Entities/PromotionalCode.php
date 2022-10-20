@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rafaelneris\ObjectCalisthenics\Case1;
+namespace Rafaelneris\ObjectCalisthenics\Case1\Entities;
 
 class PromotionalCode
 {
@@ -17,14 +17,16 @@ class PromotionalCode
         return $this->promotionalCode;
     }
 
-    public function isBrazilianPromotion()
-    {
-        str_contains("BR", $this->promotionalName);
-        return $this->promotionalName;
-    }
-
     public function isExpired(): bool
     {
         return $this->isExpired;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPromotionalName(): string
+    {
+        return $this->promotionalName;
     }
 }

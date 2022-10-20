@@ -2,7 +2,7 @@
 
 namespace Rafaelneris\ObjectCalisthenics\Case1\Repositories;
 
-use Rafaelneris\ObjectCalisthenics\Case1\PromotionalCode;
+use Rafaelneris\ObjectCalisthenics\Case1\Entities\PromotionalCode;
 
 interface PromotionalCodeRepository
 {

@@ -1,7 +1,9 @@
 <?php
 
-namespace Rafaelneris\ObjectCalisthenics\Case1;
+namespace Rafaelneris\ObjectCalisthenics\Case1\Services;
 
+use Exception;
+use Rafaelneris\ObjectCalisthenics\Case1\Entities\Order;
 use Rafaelneris\ObjectCalisthenics\Case1\Repositories\PromotionalCodeRepository;
 
 class PromotionService
@@ -12,17 +14,19 @@ class PromotionService
     {
         if ($order->isElegibleForPromotion()) {
             $promotionalCode = $this->promotionalCodeRepository->getPromotionalCode($promotionalName);
+            //2
             if ($promotionalCode) {
+                // 1
                 if ($promotionalCode->isExpired() === false) {
                     return $order->applyPromotionalCode($promotionalCode);
                 } else {
-                    throw new \Exception("Promoção Expirada");
+                    throw new Exception("Promoção Expirada");
                 }
             } else {
-                throw new \Exception("Promoção informada não existe");
+                throw new Exception("Promoção informada não existe");
             }
         } else {
-            throw new \Exception("Pedido não elegível a promoção");
+            throw new Exception("Pedido não elegível a promoção");
         }
     }
 }

@@ -7,7 +7,7 @@ class File {
 
     public function write(array $k) {
         foreach ($k as $j) {
-            fwrite($f, $j);
+            fwrite($this->f, $j);
         }
     }
 

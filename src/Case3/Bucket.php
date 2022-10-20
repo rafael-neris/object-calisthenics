@@ -6,10 +6,10 @@ namespace Rafaelneris\ObjectCalisthenics\Case3;
 
 class Bucket
 {
-    public function __construct(private ProductCollection $productCollection) {}
+    public function __construct(private array $products = []) {}
 
     public function getCountOfProducts(): int
     {
-        return $this->productCollection->count();
+        return count($this->products);
     }
 }
