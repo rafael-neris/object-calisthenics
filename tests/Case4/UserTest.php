@@ -13,7 +13,7 @@ class UserTest extends TestCase
         $email = new Email("rafaelneris@phpsp.com");
         $user = new User($email);
 
-        $domain = $user->getEmail()->getDomain();
+        $domain = $user->getEmailDomain();
 
         self::assertIsString($domain);
         self::assertEquals("phpsp.com", $domain);
