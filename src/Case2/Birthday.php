@@ -15,13 +15,14 @@ class Birthday
 
     public function __construct(string $birthday)
     {
-        $this->day = (int)$this->dateTime->format('d');
-        $this->month = (int)$this->dateTime->format('m');
-        $this->year = (int)$this->dateTime->format('Y');
+
         $format = $this->getDateFormat($birthday);
         $dateTime = DateTime::createFromFormat($format, $birthday);
         if ($dateTime) {
             $this->dateTime = $dateTime;
+            $this->day = (int)$this->dateTime->format('d');
+            $this->month = (int)$this->dateTime->format('m');
+            $this->year = (int)$this->dateTime->format('Y');
         }
 
         $this->validateBirthdayDate();
