@@ -8,8 +8,8 @@ class User
 {
     public function __construct(private Email $email) {}
 
-    public function getEmail(): Email
+    public function getEmailDomain(): string
     {
-        return $this->email;
+        return $this->email->getDomain();
     }
 }

@@ -4,13 +4,13 @@ namespace Rafaelneris\ObjectCalisthenics\Case2;
 
 class Customer
 {
-    public function __construct(protected string $name, protected string $birthday)
+    public function __construct(protected string $name, private Birthday $birthday)
     {
         // Validar Aqui?
     }
 
     public function getBirthDay(): string
     {
-        return $this->birthday;
+        return $this->birthday->format();
     }
 }
